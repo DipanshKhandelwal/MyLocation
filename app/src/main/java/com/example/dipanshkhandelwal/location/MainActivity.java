@@ -68,4 +68,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         }
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, (LocationListener) this);
     }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        mGoogleApiClient.connect();
+    }
 }
